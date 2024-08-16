@@ -31,10 +31,8 @@ public class SaldosPromedio {
         
 		try {
 			Statement statement = conexion.createStatement();
-	         
-	        statement.execute(qry.toString());
-	         
-	        System.out.println("Se creo la tabla movimientos");
+	        	statement.execute(qry.toString());
+	        	System.out.println("Se creo la tabla movimientos");
 		}catch(SQLException err) {
 			err.printStackTrace();
 		}
@@ -96,10 +94,8 @@ public class SaldosPromedio {
 		
 		try {
 			Statement statement = conexion.createStatement();
-	         
-	        statement.execute(qry.toString());
-	         
-	        System.out.println("Se cargo la tabla movimientos");
+		        statement.execute(qry.toString());
+	        	System.out.println("Se cargo la tabla movimientos");
 		}catch(SQLException err) {
 			err.printStackTrace();
 		}
@@ -116,11 +112,11 @@ public class SaldosPromedio {
 			ResultSet rs = statement.executeQuery(qry.toString());
 			
 			while (rs.next()) {
-                System.out.print(rs.getString("mov_fecha") + "\t");
-                System.out.print(rs.getString("mov_natura") + "\t");
-                System.out.print(String.format("%,.2f", rs.getDouble("mov_cantidad")));
-                System.out.println("");
-            }
+                		System.out.print(rs.getString("mov_fecha") + "\t");
+                		System.out.print(rs.getString("mov_natura") + "\t");
+                		System.out.print(String.format("%,.2f", rs.getDouble("mov_cantidad")));
+                		System.out.println("");
+            		}
 			statement.close();
 			rs.close();
 		}catch(SQLException err) {
